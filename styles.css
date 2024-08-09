@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --light-green: hsl(148, 38%, 91%);
+  --medium-green: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --medium-grey: hsl(186, 15%, 59%);
+  --darker-grey: hsl(187, 24%, 22%);
+}
+
+body {
+  background-color: var(--light-green);
+  min-height: 100vh;
+  font-family: 'Karla', sans-serif;
+  display: grid;
+  place-content: center;
+}
+
+label {
+  color: var(--darker-grey);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--medium-grey);
+  margin-top: .5rem;
+  padding: .5rem;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--medium-green);
+  outline: 1px solid var(--medium-green);
+}
+
+.required {
+  color: var(--red);
+}
+
+.form-alert {
+  color: var(--red);
+  margin-top: .5rem;
+  display: none;
+}
+
+.container {
+  background-color: var(--white);
+  padding: 10px 30px 10px 33px;
+  border-radius: 10px;
+}
+
+h1 {
+  color: var(--darker-grey);
+  margin-bottom: 10px;
+}
+
+#contact-form .form-item {
+  margin-bottom: 1rem;
+}
+
+#contact-form .form-item:nth-child(1) {
+  display: flex;
+  gap: 1rem;
+}
+
+#contact-form .form-item:nth-child(3) .query {
+  display: flex;
+  gap: 1rem;
+  margin-top: 15px;
+}
+
+#contact-form .form-item:nth-child(3) .query .options {
+  cursor: pointer;
+  border: 1px solid var(--medium-grey);
+  border-radius: 10px;
+  margin: 5px 18px 5px 32px;
+  padding: 14px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border: 1px solid var(--medium-green);
+  outline: 1px solid var(--medium-green);
+  cursor: text;
+}
+
+#contact-form .form-item:nth-child(3) .query .options.active {
+  background-color: var(--medium-green);
+}
+
+#contact-form .form-item:nth-child(3) input[type="radio"]:checked {
+  accent-color: var(--medium-green);
+  background-color: var(--light-green);
+}
+
+#contact-form .form-item:nth-child(5) #consen-check {
+  cursor: pointer;
+}
+
+#contact-form .form-item:nth-child(5) input[type="checkbox"] {
+  accent-color: var(--medium-green);
+}
+
+#submit {
+  width: 100%;
+  background-color: var(--medium-green);
+  color: var(--white);
+  text-align: center;
+  border: none;
+  height: 100%;
+  padding: 9px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.success {
+  background-color: var(--darker-grey);
+  color: var(--white);
+  width: max-content;
+  padding: 1.5rem;
+  pointer-events: none;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  opacity: 1;
+  display: none;
+}
+
+
+
+@media(max-width: 375px) {
+  #contact-form .form-item:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+  }
+  #contact-form .form-item:nth-child(3) .query {
+      display: flex;
+      flex-direction: column;
+  }
+  textarea {
+      height: 200px;
+  }
+  .success {
+      width: 80%;
+      top: 2%;
+  }
+}
